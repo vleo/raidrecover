@@ -1,0 +1,19 @@
+
+
+                           raidextract v0.2
+
+                        RAID5 Recovery Tools
+                    Copyright (C) 2005 Peter Benie
+
+
+This distribution contains utilities that might assist you when
+recovering data from a crashed RAID5 array.
+
+                  USE THESE TOOLS AT YOUR OWN RISK!
+
+Operating on the disks from a RAID array is not a risk-free operation,
+but the risk can be mitigated by taking copies of the raw disks before
+attempting any recovery.
+
+Building instructions are in the INSTALL file.
+Copying permission is in COPYING.

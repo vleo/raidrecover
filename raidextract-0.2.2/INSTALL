@@ -1,0 +1,13 @@
+To compile, unpack the distribution and run 'make'.
+This will create the following programs:
+
+  raidextract - extract the data stream from the disks
+  parityinfo -  give information about which disks raidextract would use
+  xor - xor blocks of data
+
+In addition, static versions of the programs are created in case you are
+reduced to using recovery floppies.
+
+These programs are for Linux 2.4 and will not work on older kernel versions.
+
+

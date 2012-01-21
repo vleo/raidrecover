@@ -1,0 +1,4 @@
+Original code by Peter Benie
+
+Patch for handling disk sets with no parity (raid0 striped) by Joe Maimon
+(Version 0.2.2)
