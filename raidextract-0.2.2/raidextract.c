@@ -316,8 +316,10 @@ void printpartial(void)
 	int paritydisk=(stripe / (disks-1) + rotate) % disks;
 	int len=stripesize-offset;
 	int bytes;
+  int ndisk;
 	char *ptr;
 
+  ndisk=(disk-paritydisk+3)%disks;
 	if (!noparity && paritydisk <= disk) disk++;
 	if (len>raidlen) len=raidlen;
 	if (winoffset+len > datasize) len=datasize-winoffset;
@@ -337,7 +339,7 @@ void printpartial(void)
 	raidstart+=len;
 	raidlen-=len;
 
-	ptr=window[disk][windowalt]+winoffset;
+  ptr=window[ndisk][windowalt]+winoffset;
 	while (len)
 	{
 		bytes=write(STDOUT_FILENO, ptr, len);

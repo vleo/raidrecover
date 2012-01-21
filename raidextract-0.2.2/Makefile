@@ -1,6 +1,7 @@
 CFLAGS = -O2 -Wall -W -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 
 STRIP = strip -s -R .comment 
 SSTRIP = strip -s -R .comment -R .eh_frame $@
+STATIC = -static-libgcc
 
 # CFLAGS = -g -Wall -W -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 
 # STRIP = :
@@ -29,19 +30,19 @@ raidextract: $(RAIDEXTRACT_OBJS)
 	$(LINK.c) -o $@ $(RAIDEXTRACT_OBJS) && $(STRIP) $@
 
 raidextract.static: $(RAIDEXTRACT_OBJS)
-	$(LINK.c) -o $@ $(RAIDEXTRACT_OBJS) -static && $(SSTRIP) $@
+	$(LINK.c) -o $@ $(RAIDEXTRACT_OBJS) $(STATIC) && $(SSTRIP) $@
 
 parityinfo: $(PARITYINFO_OBJS)
 	$(LINK.c) -o $@ $(PARITYINFO_OBJS) && $(STRIP) $@
 
 parityinfo.static: $(PARITYINFO_OBJS)
-	$(LINK.c) -o $@ $(PARITYINFO_OBJS) -static && $(SSTRIP) $@
+	$(LINK.c) -o $@ $(PARITYINFO_OBJS) $(STATIC) && $(SSTRIP) $@
 
 xor: $(XOR_OBJS)
 	$(LINK.c) -o $@ $(XOR_OBJS) && $(STRIP) $@
 
 xor.static: $(XOR_OBJS)
-	$(LINK.c) -o $@ $(XOR_OBJS) -static && $(SSTRIP) $@
+	$(LINK.c) -o $@ $(XOR_OBJS) $(STATIC) && $(SSTRIP) $@
 
 *.o: util.h
 # *.static.o: lib.h
