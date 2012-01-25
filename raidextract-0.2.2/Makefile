@@ -21,7 +21,7 @@ XOR_OBJS = xor.o util.o
 all: $(PROGRAMS)
 
 clean:
-	$(RM) ./*~ ./*.o
+	$(RM) ./*~ ./*.o $(PROGRAMS)
 
 distclean: 
 	$(RM) $(PROGRAMS) ./*~ ./*.o raidextract-*
